@@ -1,0 +1,31 @@
+import React, { useEffect } from 'react';
+import './App.css';
+
+function App() {
+  // Array of image URLs (replace with your actual URLs)
+  const images = [
+    "https://example.com/mano-signs-tree.jpg",
+    "https://example.com/kookyartsai-tree.jpg",
+    "https://example.com/wickiel-tree.jpg"
+  ];
+
+  useEffect(() => {
+    document.title = "Tree Gallery";
+  }, []);
+
+  return (
+    <div className="App">
+      <h1>Tree Gallery</h1>
+      <div className="gallery">
+        {images.map((src, index) => (
+          <img key={index} src={src} alt={`Tree Art ${index + 1}`} />
+        ))}
+      </div>
+      <div className="paragraph">
+        Jamie wants an app to use images for income, but those images could be copyrighted, so we should warn about license issues. Offering ideas like a wallpaper app or an NFT is good. A Flutter/React Native app for ads, or a simple PWA with Stripe for payments, could work. However, original images or licensed stock would be safer to avoid IP problems. We can help with a ready-to-go web app too.
+      </div>
+    </div>
+  );
+}
+
+export default App;
